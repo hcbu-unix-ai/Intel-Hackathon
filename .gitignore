@@ -167,4 +167,5 @@ app/docs_embedding
 app/.streamlit
 app/cache
 app/entrypoint.sh
+__pycache__
 
