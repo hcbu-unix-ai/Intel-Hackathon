@@ -1,0 +1,9 @@
+app/.env
+app/Llama-3.2-1B
+app/docs_embedding
+app/cache
+app/__pycache__
+.streamlit
+app/entrypoint.sh
+openvino_env
+.ipynb_checkpoints
