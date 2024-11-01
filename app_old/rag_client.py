@@ -15,7 +15,7 @@ embeddings_folder = os.getenv('CHROMA_PATH', './docs_embedding')  # default to '
 
 # Set up Streamlit interface
 st.title('OpenVINO Q&A Chatbot')
-st.markdown(f'QA Server: {server_url}:{server_port}')
+#st.markdown(f'QA Server: {server_url}:{server_port}')
 
 # Initialize the session state variables
 if 'messages' not in st.session_state:

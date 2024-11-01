@@ -5,7 +5,6 @@ __pycache__/
 
 # C extensions
 *.so
-
 # Distribution / packaging
 .Python
 build/
@@ -162,10 +161,8 @@ cython_debug/
 #.idea/
 
 openvino_env
-app/Llama-3.2-1B
-app/docs_embedding
-app/.streamlit
-app/cache
-app/entrypoint.sh
+app_old/Llama-3.2-1B
+app_old/docs_embedding
+app_old/cache
 __pycache__
-
+app/data/
