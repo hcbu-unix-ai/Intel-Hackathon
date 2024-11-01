@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: openvino-data-pvc
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 10Gi
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: openvino-chat-deployment
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: openvino-chat
+    template:
+      metadata:
+        labels:
+          app: openvino-chat
+      spec:
+        containers:
+        - name: openvino-chat
+          image: hcbuunixai/openvino-chat:v1
+          ports:
+          - containerPort: 8505
+          volumeMounts:
+          - name: openvino-data
+            mountPath: /openvino/app/data/
+        volumes:
+        - name: openvino-data
+          persistentVolumeClaim:
+            claimName: openvino-data-pvc
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: openvino-chat-service
+  spec:
+    selector:
+      app: openvino-chat
+    ports:
+    - name: http
+      port: 8505
+      targetPort: 8505
+    type: ClusterIP
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    name: openvino-chat-route
+  spec:
+    to:
+      kind: Service
+      name: openvino-chat-service
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect

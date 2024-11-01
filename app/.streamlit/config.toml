@@ -4,3 +4,6 @@ backgroundColor="#DEEFF5"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#31333F"
 font="sans serif"
+
+[browser]
+gatherUsageStats=false
