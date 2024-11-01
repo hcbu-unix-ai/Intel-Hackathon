@@ -36,7 +36,7 @@ def load_embeddings_model():
 
 def load_llm_model():
     print("Loading Model.. : ",model_id)
-    model = OVModelForCausalLM.from_pretrained(model_id=model_id, device=inference_device, ov_config=ov_config)
+    model = OVModelForCausalLM.from_pretrained(model_id=model_id, device=inference_device, ov_config=ov_config, export=True)
     return model
 
 def load_tokenizer():
@@ -77,7 +77,7 @@ def run_query(query, model, tokenizer, embeddings):
 
     custom_prompt = PromptTemplate(
         input_variables=["context", "question"],
-        template=custom_prompt_template
+        template=prompt_template
     )
 
     vectorstore = Chroma(persist_directory=chroma_path, embedding_function=embeddings)

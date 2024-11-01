@@ -1,5 +1,6 @@
 ./app/cache/*
 ./app/data/*
+./app/.env
 ./app/__pycache__/
 __pycache__/
 ./openvino_env/
