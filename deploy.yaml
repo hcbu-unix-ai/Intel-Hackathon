@@ -27,7 +27,7 @@ items:
       spec:
         containers:
         - name: openvino-chat
-          image: hcbuunixai/openvino-chat:v1
+          image: hcbuunixai/openvino-chat:v2
           ports:
           - containerPort: 8505
           volumeMounts:
