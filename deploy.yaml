@@ -28,6 +28,9 @@ items:
         containers:
         - name: openvino-chat
           image: hcbuunixai/openvino-chat:v1
+          env:
+          - name: HOME
+            value: /openvino/app/data/
           ports:
           - containerPort: 8505
           volumeMounts:

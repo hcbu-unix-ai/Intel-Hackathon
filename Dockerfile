@@ -22,6 +22,10 @@ COPY app /openvino/app
 # Set the working directory in the container
 WORKDIR /openvino/app
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    poppler-utils tesseract-ocr \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 ENV CACHE_DIR='/openvino/app/data/cache'
