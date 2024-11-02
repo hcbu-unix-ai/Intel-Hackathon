@@ -6,8 +6,7 @@ WORKDIR /openvino
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
-    git libmagic1 libgl1 \
+    gcc git libmagic1 libgl1 libglib2.0-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the entire app directory into the Docker container

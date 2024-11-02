@@ -21,4 +21,3 @@ chromadb==0.5.16
 streamlit==1.39.0
 unstructured[pdf]
 langchain-unstructured[local]
-opencv-python-headless
