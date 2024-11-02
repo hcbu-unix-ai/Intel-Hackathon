@@ -62,7 +62,7 @@ items:
     name: openvino-chat-route
   spec:
     port:
-      targetPort: 8080
+      targetPort: 8505
     to:
       kind: Service
       name: openvino-chat-service
