@@ -9,7 +9,7 @@ pip install -r requirements.txt
 
 ## Deploy using Docker
 ```bash
-docker run -it -p 8505:8505 -v ./data/:/openvino/app/data/ hcbuunixai/openvino-chat:v1
+docker run -it -p 8505:8505 -v ./data/:/openvino/app/data/ hcbuunixai/openvino-chat:v0.1.1
 ```
 
 ## Deploy in Openshift
