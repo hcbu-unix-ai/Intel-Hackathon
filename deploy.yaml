@@ -54,6 +54,8 @@ items:
   metadata:
     name: openvino-chat-route
   spec:
+    port:
+      targetPort: 8080
     to:
       kind: Service
       name: openvino-chat-service
