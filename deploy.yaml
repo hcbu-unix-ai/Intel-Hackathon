@@ -35,7 +35,7 @@ items:
             mountPath: /openvino/app/data/
           resources:
             limits:
-              cpu: '10'
+              cpu: '8'
               memory: 10Gi
             requests:
               cpu: '1'
