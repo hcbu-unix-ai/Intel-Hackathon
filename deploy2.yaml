@@ -32,7 +32,7 @@ items:
           - name: HOME
             value: /openvino/app/data/
           ports:
-          - containerPort: 8505
+          - containerPort: 8507
           volumeMounts:
           - name: openvino-data
             mountPath: /openvino/app/data/
@@ -57,18 +57,6 @@ items:
     ports:
     - name: http
       port: 8505
-      targetPort: 8505
+      targetPort: 8507
     type: ClusterIP
-- apiVersion: route.openshift.io/v1
-  kind: Route
-  metadata:
-    name: openvino-chat-route
-  spec:
-    port:
-      targetPort: 8505
-    to:
-      kind: Service
-      name: openvino-chat-service
-    tls:
-      termination: edge
-      insecureEdgeTerminationPolicy: Redirect
+
